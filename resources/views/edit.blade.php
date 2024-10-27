@@ -5,7 +5,7 @@
         @method('PATCH')
         <div class="mb-3">
             <label for="name" class="form-label" > Имя </label>
-            <input type="text" class="form-control" id="exampleInputEmail1" name="f_name" required value="{{ $user->f_name }}">
+            <input type="text" class="form-control" id="exampleInputEmail1" name="f_name" required value="{{ $user->getFName() }}">
 
             @error('f_name')
             <p class="text-danger">{{ $message }}</p>
@@ -14,7 +14,7 @@
 
         <div class="mb-3">
             <label for="surname" class="form-label">Фамилия</label>
-            <input type="text" class="form-control" id="surname" name="l_name" value="{{ $user->l_name }}">
+            <input type="text" class="form-control" id="surname" name="l_name" value="{{ $user->getLName() }}">
 
             @error('l_name')
             <p class="text-danger">{{ $message }}</p>
@@ -23,7 +23,7 @@
 
         <div class="mb-3">
             <label for="patronymic" class="form-label">Отчество</label>
-            <input type="text" class="form-control" id="patronymic" name="m_name" value="{{ $user->m_name }}">
+            <input type="text" class="form-control" id="patronymic" name="m_name" value="{{ $user->getMName() }}">
 
             @error('m_name')
             <p class="text-danger">{{ $message }}</p>
@@ -32,7 +32,7 @@
 
         <div class="mb-3">
             <label for="date_birth" class="form-label">Дата рождения</label>
-            <input type="date" class="form-control" id="date_birth" name="birthday" value="{{ $user->birthday }}">
+            <input type="date" class="form-control" id="date_birth" name="birthday" value="{{ $user->getBirthday() }}">
 
             @error('birthday')
             <p class="text-danger">{{ $message }}</p>
@@ -41,7 +41,7 @@
 
         <div class="mb-3">
             <label for="password" class="form-label">Пароль</label>
-            <input type="text" class="form-control" id="password" name="password" value="{{ $user->password }}">
+            <input type="text" class="form-control" id="password" name="password" value="{{ $user->getPassword() }}">
 
             @error('password')
             <p class="text-danger">{{ $message }}</p>
@@ -50,14 +50,14 @@
 
             <div class="mb-3">
                 <label for="email" class="form-label">Мыло</label>
-                <input type="email" class="form-control" id="email" name="email" value="{{ $user->email }}">
+                <input type="email" class="form-control" id="email" name="email" value="{{ $user->getEmail() }}">
 
                 @error('email')
                 <p class="text-danger">{{ $message }}</p>
                 @enderror
             </div>
 
-        <div><img src="{{ url('storage/'.$user->image) }}" alt="Аватарка пользователя"> </div>
+        <div><img src="{{ url('storage/'.$user->getImage()) }}" alt="Аватарка пользователя"> </div>
 
 
         <div class="input-group">

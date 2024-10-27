@@ -32,11 +32,11 @@ class UpdateController extends Controller
         }
 
         $user->update([
-            'f_name' => $date['f_name'],
-            'l_name' => $date['l_name'],
-            'm_name' => $date['m_name'],
-            'birthday' => $date['birthday'],
-            'email' => $date['email'],
+            'f_name' => $request->string('f_name'),
+            'l_name' => $request->string('l_name'),
+            'm_name' => $request->string('m_name'),
+            'birthday' => $request->date('birthday'),
+            'email' => $request->string('email'),
         ]);
 
         return redirect()->route('show', $user->id);

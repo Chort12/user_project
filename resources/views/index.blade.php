@@ -20,12 +20,12 @@
         @foreach ($users as $user)
             <tr>
                 <th scope="row"><a href="{{ route('show', $user->id) }}">{{ $user->id }}</a></th>
-                <td>{{ $user->f_name}}</td>
-                <td>{{ $user->l_name}}</td>
-                <td>{{ $user->m_name }}</td>
-                <td>{{ $user->password }}</td>
-                <td>{{ $user->birthday }}</td>
-                <td>{{ $user->email }}</td>
+                <td>{{ $user->getFName()}}</td>
+                <td>{{ $user->getLName()}}</td>
+                <td>{{ $user->getMName() }}</td>
+                <td>{{ $user->getPassword() }}</td>
+                <td>{{ $user->getBirthday() }}</td>
+                <td>{{ $user->getEmail() }}</td>
             </tr>
         @endforeach
 

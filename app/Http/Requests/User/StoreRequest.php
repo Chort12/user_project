@@ -24,11 +24,11 @@ class StoreRequest extends FormRequest
         return [
             'f_name' => 'string|required|max:50',
             'l_name' => 'string|required|max:50',
-            'm_name' => 'string|nullable|max:50',
+            'm_name' => 'string|max:50',
             'password' => 'string|required|min:4',
-            'birthday' => 'date|nullable',
+            'birthday' => 'date',
             'email' => 'string|email|required|unique:users',
-            'image' => 'file|max:2048|nullable',
+            'image' => 'file|max:2048',
         ];
     }
 }
